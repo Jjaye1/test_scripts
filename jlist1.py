@@ -12,16 +12,18 @@ font = {'family' : 'serif',
         }
 
 our_list = smact.ordered_elements(1,100)
-proton = [] ; crustal = [] ; HHI_P = [] ; HHI_r = []
+proton_1 = [] ; crustal_1 = [] ; HHI_P_1 = [] ; HHI_r_1 = []
 for element in our_list:
     a = smact.Element(element)
     if  a.crustal_abundance and a.HHI_p:
-        proton.append(a.number)
-        crustal.append(a.crustal_abundance)
-        HHI_P.append(a.HHI_p)
-        HHI_r.append(a.HHI_R)  
+		if a.trivialname == 'alkali_metals':
+            proton_1.append(a.number)
+        	crustal_1.append(a.crustal_abundance)
+        	HHI_P_1.append(a.HHI_p)
+        	HHI_r_1.append(a.HHI_R) 
+		elif a.trivialname == ''
 
-data = np.empty(shape=(len(proton),4))
+data = np.zeros(shape=(len(proton),4))
 for i in range(len(proton)-1):
     data[i,0] = proton[i]
     data[i,1] = crustal[i]
