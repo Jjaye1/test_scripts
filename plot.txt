@@ -1,0 +1,9 @@
+In [27]: ]
+
+In [28]: plt.plot(data[0],data[1],'o')
+Out[28]: [<matplotlib.lines.Line2D at 0x10fae4490>]
+
+In [29]: plt.show
+Out[29]: <function matplotlib.pyplot.show>
+
+In [30]: plt.show()
